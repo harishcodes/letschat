@@ -1,0 +1,208 @@
+@import url(http://weloveiconfonts.com/api/?family=typicons);
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+body {
+    background-color: #282c34;
+}
+
+html,body {
+    height:100%;
+    background-color: #282c34;
+}
+
+.form-inline {
+    justify-content: center;
+    background-color: #282c34;
+    color:white;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 15vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+[class*="typicons-"]:before {
+  font-family: 'Typicons', sans-serif;
+}
+.module {
+  width: 300px;
+  margin: 20px auto;
+}
+.top-bar {
+  background: #666;
+  color: white;
+  padding: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.top-bar h1 {
+  display: inline;
+  font-size: 1.1rem;
+}
+.top-bar .typicons-message {
+  display: inline-block;
+  padding: 4px 5px 2px 5px;
+}
+.top-bar .typicons-minus {
+  position: relative;
+  top: 3px;
+}
+.top-bar .left {
+  float: left;
+}
+.top-bar .right {
+  float: right;
+  padding-top: 5px;
+}
+.top-bar > * {
+  position: relative;
+}
+.top-bar::before {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 0;
+  right: 0;
+  bottom: -100%;
+  opacity: 0.25;
+  background: radial-gradient(white, black);
+  animation: pulse 1s ease alternate infinite;
+}
+.discussion {
+  list-style: none;
+  /*background: #e5e5e5;*/
+  background: #000;
+  margin: 0;
+  padding: 0 0 50px 0;
+  overflow:hidden;
+  overflow-y:scroll; 
+  height:400px;    
+}
+
+.discussion li {
+  padding: 0.5rem;
+  overflow: hidden;
+  display: flex;
+}
+.discussion .avatar {
+  width: 40px;
+  position: relative;
+}
+.discussion .avatar img {
+  display: block;
+  width: 100%;
+}
+.other .avatar:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border: 5px solid white;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+}
+.self {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.self .messages {
+  order: 1;
+  border-bottom-right-radius: 0;
+}
+.self .avatar {
+  order: 2;
+}
+.self .avatar:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border: 5px solid white;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.messages {
+  background: white;
+  padding: 10px;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.messages p {
+  font-size: 0.8rem;
+  margin: 0 0 0.2rem 0;
+}
+.messages time {
+  font-size: 0.7rem;
+  color: #ccc;
+}
+
+input.textArea {
+    position: relative;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 50px;
+    z-index: 99;
+    /*background: #fafafa;*/
+    background: #ccc;
+    border: none;
+    outline: none;
+    color: #666;
+    font-weight: 400;
+}
+
+.buttonStyle {
+     color: #fff;
+     font-size: 0;
+     width: 135px;
+     height: 60px;
+     border: none;
+     margin: 0;
+     padding: 0;
+     /*background: #0c0 url(image) 0 0 no-repeat;    */
+}
+
+.indent-1 {float: left;}
+.indent-1 section {width: 50%; float: left;}
+
+
+@keyframes pulse {
+  from { opacity: 0; }
+  to { opacity: 0.5; }
+}
+
