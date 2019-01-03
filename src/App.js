@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './W3.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
+import './Userlist.css';
 import Chatcontrolpageaction from './ChatPage/components/chatcontrolpageaction.js'
 import Startup from './Startup.js'
 //const username = "harish"
@@ -49,14 +50,9 @@ class App extends Component {
           >
             Learn React
           </a>*/}
-            <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>   
+            <h1>
+                LETSCHAT &#9786; &#9786; &#9786;
+            </h1>
         </header>
 
         {renderComponent}

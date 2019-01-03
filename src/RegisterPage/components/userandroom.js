@@ -9,14 +9,14 @@ export default class userandroom extends React.Component {
             uniqueName : ""
         }
     }
-    
+
     handleChange = (e) => {
-                
+
         this.setState({
             uniqueName: e.target.value
-        })        
+        })
     }
-    
+
     handleSubmit = (e) => {
         e.preventDefault()
         console.log('hey')
@@ -27,32 +27,33 @@ export default class userandroom extends React.Component {
             uniqueName:""
         })
     }
-    
+
     joinRoom = (a) => {
-        const {joinRoom,roomsList} = this.props
+        const {joinRoom,roomsList,currentUserId} = this.props
         console.log('innerHtml :', a.target.innerText.trim())
         var roomnametrim = a.target.innerText.trim()
         var roomiden = roomsList.filter(item => item.name === roomnametrim).map(item => item.id)
-        console.log('roomiden', roomiden.toString())        
-        joinRoom(roomiden.toString())
+        console.log('roomiden', roomiden.toString())
+        console.log('in JOIN ROOM', this.props.chatKit)
+        joinRoom(roomiden.toString(),currentUserId,this.props.chatKit)
     }
-    
-    
-    
+
+
+
     render(){
-        
+
         var divStyle = {
             width:'50%',
             color:'white'
-        }  
-        
-        var renderComponent=""        
-        var roomList=""   
+        }
+
+        var renderComponent=""
+        var roomList=""
         var licpmnt=""
-        const {roomJoined,userAdded,userExists} = this.props 
-        
+        const {roomJoined,userAdded,userExists} = this.props
+
         if (!roomJoined){
-            
+
             if (!(userAdded) && !(userExists)){
                 renderComponent = <div>
                                   <Form inline onSubmit={this.handleSubmit.bind(this)}>
@@ -61,7 +62,7 @@ export default class userandroom extends React.Component {
                                           <Input type="text" name="user" id="user" placeholder="Unique Name"  value={this.state.uniqueName} onChange={this.handleChange.bind(this)} />
                                         </FormGroup>
                                         <Button onClick={this.handleSubmit.bind(this)}>Add User</Button>
-                                  </Form>                                    
+                                  </Form>
 
 
                                   </div>
@@ -73,7 +74,7 @@ export default class userandroom extends React.Component {
             if (userAdded || userExists){
                 licpmnt = roomsList.map((room,i) => {
                                   return(
-                                    <ListGroupItem tag="a" href="#" action key={i} color="secondary" onClick={this.joinRoom.bind(this)}>      
+                                    <ListGroupItem tag="a" href="#" action key={i} color="secondary" onClick={this.joinRoom.bind(this)}>
                                             {room.name}
                                     </ListGroupItem>
                                     )
@@ -83,18 +84,18 @@ export default class userandroom extends React.Component {
                               <ListGroup>
                                  {licpmnt}
                               </ListGroup>
-                            </div> 
+                            </div>
 
             }
     }
-        
+
         return (
-        
+
             <div>
                 {renderComponent}
                 {roomList}
-            </div>        
-        )        
+            </div>
+        )
     }
-    
+
 }

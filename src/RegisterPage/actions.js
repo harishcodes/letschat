@@ -16,29 +16,39 @@ export function addUser(uniqueName,chatKit){
                 })
                   .then((res) => {
                     console.log('rooms list',res);
-                    dispatch({type:"USER_CREATED",payload:{res:res,chatKitInstance:chatKit,userId:uniqueName}})                     
+                    dispatch({type:"USER_CREATED",payload:{res:res,chatKitInstance:chatKit,userId:uniqueName}})
                   }).catch((err) => {
                     console.log(err);
-                  });            
-          })        
+                  });
+          })
           .catch((err) => {
                 console.log(err);
                 console.log(uniqueName);
                 chatKit.getRooms({})
                   .then((res) => {
                     console.log('rooms list',res);
-                    dispatch({type:"USER_EXISTS",payload:{chatKitInstance:chatKit,res:res,userId:uniqueName}}) 
+                    dispatch({type:"USER_EXISTS",payload:{chatKitInstance:chatKit,res:res,userId:uniqueName}})
                   }).catch((err) => {
                     console.log(err);
-                 });                               
-          })                
-        
+                 });
+          })
+
     })
 }
 
-export function joinRoom(roomId) {
+export function joinRoom(roomId,userId,chatKit) {
+  console.log('USER ID',userId)
     return ((dispatch) => {
-            dispatch({type:"JOINED_ROOM",payload:{roomId:roomId}})
-        }        
+            chatKit.addUsersToRoom({
+              roomId: roomId,
+              userIds: [userId]
+            })
+              .then(() => {
+                console.log('added');
+                          dispatch({type:"JOINED_ROOM",payload:{roomId:roomId}})
+              })
+              .catch(err => console.error(err))
+
+        }
     )
 }

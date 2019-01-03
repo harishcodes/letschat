@@ -1,6 +1,4 @@
 import React from 'react'
-import Chatinputaction from './chatinputaction.js'
-import Msglistaction from './msglistaction.js'
 import Title from './title.js'
 import Userlistaction from './userlistaction.js'
 import { ChatManager, TokenProvider } from '@pusher/chatkit-client'
@@ -9,19 +7,19 @@ const testToken = "https://us1.pusherplatform.io/services/chatkit_token_provider
 
 
 export default class chatpage extends React.Component {
-    
+
     constructor(){
         super()
         this.state = {
-            msgList : [],
+            //msgList : [],
             currentUser:'',
             activeRoomId:''
-        }        
+        }
     }
-    
-    
-    
-    
+
+
+
+
     componentDidMount(){
         const {roomJoined,currentUserId,roomId} = this.props
         console.log('Room Joined :', roomJoined)
@@ -35,59 +33,40 @@ export default class chatpage extends React.Component {
                     tokenProvider: new TokenProvider({
                         url:testToken
                     })
-                })      
+                })
 
 
                 chatManager.connect()
                     .then(currentUser => {
                        //this.currentUser = currentUser
-                        currentUser.subscribeToRoom({
-                            roomId:roomId,
-                            hooks: {
-                                onMessage: message => {
-                                    console.log("heremsg :", message)
-                                    console.log("currUser",currentUser)
-                                    this.setState({
-                                        msgList: [...this.state.msgList, message],
-                                        currentUser: currentUser,
-                                        activeRoomId: roomId
-                                    })
-                                }
-                            }
-                        })
+                       this.setState({currentUser: currentUser})
                     })
                     .catch(err => {
                         console.log('Error on connection', err)
-                    })        
+                    })
             }
-  }    
-    
+  }
+
     render(){
-        
+
         var renderComponent=""
-        
-        const {roomJoined} = this.props    
 
-            
-         if (roomJoined){     
-            console.log('CURRR USER :', this.state.currentUser)  
-             renderComponent = <section className="indent-1">
-                                    <section className="module">
-                                        <Userlistaction currentUser={this.state.currentUser} roomId={this.state.activeRoomId}/>
-                                    </section>                  
-                                    <section className="module">
-                                        <Title/>
-                                        <Msglistaction msgList={this.state.msgList} currentUser={this.state.currentUser}/>
-                                        <Chatinputaction currentUser={this.state.currentUser} roomId={this.state.activeRoomId}/>    
-                                    </section>                                                       
-                                </section> 
+        const {roomJoined,roomId} = this.props
 
+
+         if (roomJoined){
+            console.log('CURRR USER :', this.state.currentUser)
+            if ((typeof this.state.currentUser !== 'undefined') && (this.state.currentUser !== '')){
+               renderComponent = <div className={["container-fluid", "h-100"].join(' ')}>
+                                            <Userlistaction currentUser={this.state.currentUser} roomId={roomId}/>
+                                  </div>
+            }
          }
         return (
-            <div>                                       
+            <div>
                 {renderComponent}
             </div>
         )
     }
-    
+
 }

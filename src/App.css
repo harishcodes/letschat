@@ -104,8 +104,8 @@ html,body {
   margin: 0;
   padding: 0 0 50px 0;
   overflow:hidden;
-  overflow-y:scroll; 
-  height:400px;    
+  overflow-y:scroll;
+  height:400px;
 }
 
 .discussion li {
@@ -197,12 +197,10 @@ input.textArea {
      /*background: #0c0 url(image) 0 0 no-repeat;    */
 }
 
-.indent-1 {float: left;}
+.indent-1 {padding: 0 25px;}
 .indent-1 section {width: 50%; float: left;}
-
 
 @keyframes pulse {
   from { opacity: 0; }
   to { opacity: 0.5; }
 }
-
