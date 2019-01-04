@@ -1,7 +1,6 @@
 import React from 'react'
 import avatar from '../images/img_avatar2.png'
 import Msglistaction from './msglistaction.js'
-import {ListGroup,ListGroupItem } from 'reactstrap';
 
 
 export default class userlist extends React.Component {
@@ -24,8 +23,8 @@ componentDidMount(){
       roomId:roomId,
       hooks: {
           onMessage: message => {
-              console.log("heremsg :", message)
-              console.log("currUser",currentUser)
+              //console.log("heremsg :", message)
+              //console.log("currUser",currentUser)
               this.setState({
                   msgList: [...this.state.msgList, message]
               })
@@ -45,29 +44,20 @@ componentDidMount(){
 
     const {currentUser,roomId} = this.props
 
-    var divStyle = {
-        width:'50%',
-        color:'white'
-    }
-    var imgStyle = {
-        width:'45%'
-    }
-
-
     var userComponent=""
     if ((typeof currentUser !== 'undefined') && (currentUser !== '') && this.state.subscribed){
-        console.log('currentUser :', currentUser)
-        console.log('urooms :', currentUser.rooms[0])
+        //console.log('currentUser :', currentUser)
+        //console.log('urooms :', currentUser.rooms[0])
         var userArray = currentUser.rooms.filter(item => item.id === roomId)[0].users
-        console.log('activeitemid :', roomId)
-        console.log('UserArr :', userArray)
+        //console.log('activeitemid :', roomId)
+        //console.log('UserArr :', userArray)
 
         if (typeof userArray !== 'undefined'){
             userComponent = userArray.map((user,idx) => {
 
                 var coloroflist;
                 var stateInfo
-                console.log('STATEEEEE :', stateInfo)
+                //console.log('STATEEEEE :', stateInfo)
                 if (user.presence.state === 'online') {
                     coloroflist = "online_icon"
                     stateInfo = 'Online'
@@ -80,7 +70,7 @@ componentDidMount(){
                         <li key={idx}>
                           <div className = { ["d-flex","bd-highlight"].join(' ') }>
                           								<div className="img_cont">
-                          									<img src="https://devilsworkshop.org/files/2013/01/enlarged-facebook-profile-picture.jpg" className={["rounded-circle", "user_img"].join(' ')}/>
+                          									<img alt="" src={avatar} className={["rounded-circle", "user_img"].join(' ')}/>
                           									<span className={coloroflist}></span>
                           								</div>
                           								<div className="user_info">

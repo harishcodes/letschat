@@ -6,6 +6,7 @@ import './App.css';
 import './Userlist.css';
 import Chatcontrolpageaction from './ChatPage/components/chatcontrolpageaction.js'
 import Startup from './Startup.js'
+import { withRouter } from 'react-router';
 //const username = "harish"
 //const roomId = "19379557"
 
@@ -61,4 +62,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

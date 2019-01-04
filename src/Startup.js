@@ -23,7 +23,7 @@ export default class Startup extends React.Component {
           key: key
         })
         
-        console.log('chat ', chatkit)
+        //console.log('chat ', chatkit)
         this.setState({
             chatKit : chatkit
         })

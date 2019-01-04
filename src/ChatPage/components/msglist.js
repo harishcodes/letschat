@@ -1,5 +1,6 @@
 import React from 'react'
 import Chatinputaction from './chatinputaction.js'
+import avatar from '../images/img_avatar2.png'
 
 
 export default class msglist extends React.Component {
@@ -21,13 +22,13 @@ export default class msglist extends React.Component {
                                                <span className="msg_time_send">8:40 AM, Today</span>
                                          </div>
                                          <div className="img_cont_msg">
-                                             <img src="https://devilsworkshop.org/files/2013/01/enlarged-facebook-profile-picture.jpg" className={["rounded-circle", "user_img_msg"].join(' ')}/>
+                                             <img alt="" src={avatar} className={["rounded-circle", "user_img_msg"].join(' ')}/>
                                          </div>
                                      </div>
                    } else {
                        liSelfOther = <div className={["d-flex", "justify-content-start", "mb-4"].join(' ')} key={i}>
                                          <div className="img_cont_msg">
-                                             <img src="https://devilsworkshop.org/files/2013/01/enlarged-facebook-profile-picture.jpg" className={["rounded-circle", "user_img_msg"].join(' ')}/>
+                                             <img alt="" src={avatar} className={["rounded-circle", "user_img_msg"].join(' ')}/>
                                          </div>
                                          <div className="msg_cotainer">
                                                {msg.text}

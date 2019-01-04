@@ -19,6 +19,7 @@ html,body {
 }
 
 .form-inline {
+    padding:25px;
     justify-content: center;
     background-color: #282c34;
     color:white;
@@ -203,4 +204,47 @@ input.textArea {
 @keyframes pulse {
   from { opacity: 0; }
   to { opacity: 0.5; }
+}
+
+
+/* Team Room List*/
+ul {
+  /* display:inline-block; */
+  /* border: 2px solid white; */
+  background-color: black;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  /* border-bottom: 1px solid #ccc; */
+}
+
+li:last-child {
+  border: none;
+}
+
+li a {
+  text-decoration: none;
+  color: #fff;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  display: block;
+  width: 200px;
+}
+
+li a:hover {
+  font-size: 30px;
+  background: white;
+  text-decoration: none;
+}
+
+.modal-content {
+  background-color: #adb5bd;
 }
