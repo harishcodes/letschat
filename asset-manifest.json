@@ -1,15 +1,15 @@
 {
-  "main.css": "/letschat/static/css/main.665be214.chunk.css",
-  "main.js": "/letschat/static/js/main.0765b272.chunk.js",
-  "main.js.map": "/letschat/static/js/main.0765b272.chunk.js.map",
+  "main.css": "/letschat/static/css/main.194cd28f.chunk.css",
+  "main.js": "/letschat/static/js/main.a38e12a4.chunk.js",
+  "main.js.map": "/letschat/static/js/main.a38e12a4.chunk.js.map",
   "static/css/1.79b7cb6c.chunk.css": "/letschat/static/css/1.79b7cb6c.chunk.css",
   "static/js/1.7c737595.chunk.js": "/letschat/static/js/1.7c737595.chunk.js",
   "static/js/1.7c737595.chunk.js.map": "/letschat/static/js/1.7c737595.chunk.js.map",
   "runtime~main.js": "/letschat/static/js/runtime~main.04f0407e.js",
   "runtime~main.js.map": "/letschat/static/js/runtime~main.04f0407e.js.map",
   "static/css/1.79b7cb6c.chunk.css.map": "/letschat/static/css/1.79b7cb6c.chunk.css.map",
-  "static/css/main.665be214.chunk.css.map": "/letschat/static/css/main.665be214.chunk.css.map",
+  "static/css/main.194cd28f.chunk.css.map": "/letschat/static/css/main.194cd28f.chunk.css.map",
   "index.html": "/letschat/index.html",
-  "precache-manifest.1a1f1f99be23b87a50107044706e2809.js": "/letschat/precache-manifest.1a1f1f99be23b87a50107044706e2809.js",
+  "precache-manifest.72c04efd3c9caa48490a149b0787aeca.js": "/letschat/precache-manifest.72c04efd3c9caa48490a149b0787aeca.js",
   "service-worker.js": "/letschat/service-worker.js"
 }
