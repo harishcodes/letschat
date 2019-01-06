@@ -18,6 +18,7 @@ export default class msglist extends React.Component {
                    if (msg.senderId === currentUser.name ){
                        liSelfOther = <div className={["d-flex", "justify-content-end", "mb-4"].join(' ')} key={i}>
                                          <div className="msg_cotainer_send">
+                                              <span className="msg_sender">{msg.sender.name}</span>
                                                {msg.text}
                                                <span className="msg_time_send">8:40 AM, Today</span>
                                          </div>
@@ -31,6 +32,7 @@ export default class msglist extends React.Component {
                                              <img alt="" src={avatar} className={["rounded-circle", "user_img_msg"].join(' ')}/>
                                          </div>
                                          <div className="msg_cotainer">
+                                               <span className="msg_sender">{msg.sender.name}</span>
                                                {msg.text}
                                                <span className="msg_time">8:40 AM, Today</span>
                                          </div>
